@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Deal Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <h1><span class="emoji">🚘</span> Car Deal Tracker </h1>
+
+        <!-- TAB BUTTONS -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('add')">➕ Add Deal</button>
+            <button class="tab"        onclick="showTab('history')">📊 History</button>
+            <button class="tab"        onclick="showTab('split')">💰 Split</button>
+        </div>
+
+        <!-- ============ ADD DEAL PAGE ============ -->
+        <div class="tab-page active" id="add">
+            <form id="deal-form">
+                
+                <label>Purchase Price</label>
+                <input type="number" id="purchase_price" step="0.01" required />
+
+                <label>Repair Cost</label>
+                <input type="number" id="repair_cost" step="0.01" required />
+
+                <label>Sale Price</label>
+                <input type="number" id="sale_price" step="0.01" required />
+               
+                <button type="submit">Save Deal</button>
+            </form>
+
+            <div id="summary"></div>
+        </div>
+
+
+              <!-- ============ SPLIT PAGE ============ -->
+             <div class="tab-page" id="split">
+       <table id="split-table">
+                <thead>
+                    <tr>
+                       <th>Business (30%)</th>
+                       <th>You (50%)</th>
+                       <th>Partner (50%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+       </table>
+
+       <p istyle="margin-top: 16px; font-weight:bold;">
+        Your accumulated share : <span id="your-total-amount">$0.00  </span>
+        </p>
+            
+        </div>
+   
+        <!-- ============ HISTORY PAGE ============ -->
+        <div class="tab-page" id="history">
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Buy</th><th>Fix</th><th>Sell</th><th>Total cost</th>
+                        <th>Total profit</th><th>Reinvest</th><th>Remain</th>
+                        <th>You</th><th>Partner</th><th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+  
+
+        </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+            
